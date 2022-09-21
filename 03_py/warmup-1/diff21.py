@@ -8,10 +8,10 @@ def diff21(n):
   else :
     return 21 - n
   
-"""
-Test Cases
-diff21(19) → 2
-diff21(10) → 11
-diff21(21) → 0 
-"""
+
+#Test Cases
+#diff21(19) → 2
+#diff21(10) → 11
+#diff21(21) → 0 
+
 
