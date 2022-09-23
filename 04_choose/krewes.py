@@ -34,6 +34,6 @@ def randomdevo():
     devos = list(krewes.get(period[randp]))
     lend = len(devos)
     randd = random.randint(0,lend-1)
-    print(devos[randd])
+    print(devos[randd] + " from period " + str(period[randp]))
 
 randomdevo()
