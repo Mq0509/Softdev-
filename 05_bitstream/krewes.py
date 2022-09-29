@@ -4,14 +4,12 @@ SoftDev
 K04 -- krewes/Making a random generator to return the name of a student from any class using dictionaries
 2022-09-23
 .3 hrs
-
 OP Summary for randomdevo()
 1) Create list of the keys in krewes
 2) Choose a random key / period in the list
 3) Create list of the devos in the selected key / period
 4) Choose a random devo in the period
 5) Print the selected devo's name and period
-
 OP Summary for morethanone()
 1) Create variable numberofdevos to take user input
 2) Check if numberofdevos is within range (1 < numberofdevos < 106)
@@ -27,12 +25,10 @@ OP Summary for morethanone()
    f) Check if the list of devos is of length 1
       If so, remove key / period from krewes
       Else, continue in the loop
-
 Q/C/C
 What other things can dictionaries do?
 What other random methods are there and how do we utilize it?
 How would we import all the names of everyone from Github?
-
 DISCO
 We needed to cast the .keys into a list otherwise we got the Type Error: "dict_keys" object is not subscriptable
 '''
@@ -45,9 +41,9 @@ krewes = {
 def randomdevo():
     period = list(krewes.keys())
     randp = random.choice(period)
-    devos = list(krewes.get(period[randp]))
+    devos = list(krewes.get(randp))
     randd = random.choice(devos)
-    print(devos[randd] + " from period " + str(period[randp]))
+    print(str(randd) + " from period " + str(randp))
 
 
 def morethanone():
@@ -57,15 +53,14 @@ def morethanone():
         numberofdevos = int(input("How many people would you like? Pick carefully\n"))
     for x in range(numberofdevos):
         period = list(krewes.keys())
-        lenp = len(period)
-        randp = random.randint(0,lenp-1)
-        devos = list(krewes.get(period[randp]))
-        lend = len(devos)
-        randd = random.randint(0,lend-1)
-        print(devos[randd] + " from period " + str(period[randp]))
-        krewes[period[randp]].remove(devos[randd])
+        randp = random.choice(period)
+        devos = list(krewes.get(randp))
+        randd = random.choice(devos)
+        print(str(randd) + " from period " + str(randp))
+        krewes[randp].remove(randd)
         if len(devos) == 1:
-            krewes.pop(period[randp])
+            krewes.pop(randp)
+
 
 
 
