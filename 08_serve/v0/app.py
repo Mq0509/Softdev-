@@ -1,9 +1,9 @@
 '''
 M&(I)M: Matthew Yee, Ian Jiang, May Qiu
 SoftDev
-K08 --
+K08 -- Flask test 0
 2022-10-06
-time spent:
+time spent: 0.1 hours
 '''
 
 # Clyde 'Thluffy' Sinclair
