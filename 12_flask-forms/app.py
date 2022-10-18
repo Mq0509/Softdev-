@@ -1,8 +1,8 @@
-#M&(I)M: Matthew Yee, Ian Jiang, May Qiu
-#SoftDev
-#K11 -- Flask Forms
-#2022-10-16
-#time spent: 0.5 hours
+# DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
+# SoftDev
+# K12 -- Take and Give
+# 2022-10-17
+# time spent: 0.5 hours
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
@@ -18,7 +18,7 @@ app = Flask(__name__)    #create Flask object
 trioTASK:
 ~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
 ...read for understanding all of the code below.
-Some will work as written; other sections will not. 
+Some will work as written; other sections will not.
 TASK: Predict which...
 Devise some simple tests you can run to "take apart this engine," as it were.
 Execute your tests.
@@ -61,11 +61,13 @@ def authenticate():
     # print(request.args['username'])
     print("***DIAG: request.headers ***")
     print(request.headers)
-    return "Waaaa hooo HAAAH"  #response to a form submission
+    return render_template( 'response.html', username=request.form.get('username'), method=request.method )
+    # return render_template( 'response.html', username=request.form['username'], method=request.method )
+    # return request.form.get('username')  #response to a form submission
 
 
-    
+
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
-    app.debug = True 
+    app.debug = True
     app.run()

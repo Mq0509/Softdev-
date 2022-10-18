@@ -21,26 +21,27 @@
 <html>
 
   <head>
-    <title> LOGIN PAGE </title>
+    <title> RESPONSE PAGE </title>
   </head>
 
   <body>
+
     <h1>
       DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
     </h1>
 
-    <h1>
-      Welcome, Travelers of the Intertoobz!
-    </h1>
-
+    <h2>
+      Greetings, Devo {{ username }}, welcome to the response page...
+      <br><br>
+      Request Method: {{ method }}
+    </h2>
 
     <h3>
-      Enter your username below to proceed.
+      - A GET request retrieves information and user input from the webserver; uses request.args.
+      <br>
+      - A POST request places the HTML information retrieved from the user's input on the webserver; uses request.form.
     </h3>
-    <form action="/auth" method="post">
-      <input type="text" name="username">
-      <input type="submit" name="sub1">
-    </form>
+
     <br>
   </body>
 
