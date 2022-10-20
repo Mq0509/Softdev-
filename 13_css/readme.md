@@ -15,16 +15,16 @@ Internal Style Sheet (Block of Code in HTML)
 </style>
 ```
 
-Abreviations
+**Abreviations**
 * rel = relationship
 * href = hypertext reference (hyperlink)
 
-Other
+**Other**
 * The type attribute specifies the type of <input> element to display.
 * DIV tag defines a section of your page that should be considered together
 * ```/* Comments in css */```
 
-Class Attribute
+**Class Attribute**
 * identifier that can be applied to multiple elements
 * HTML Code: ```<h2 class="new_chapter"> ... </h2>```
 * CSS Code to access the class:
@@ -34,7 +34,7 @@ text-align = center;
 }
 ```
 
-ID Attributes
+**ID Attributes**
 * identifier that can be applied to only one element
 * HTML Code: ```<div id="main_content"> ... </div>```
 * CSS Code to access the ID:
