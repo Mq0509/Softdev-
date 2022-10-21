@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+  DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
+  SoftDev
+  K12 -- Take and Give
+  2022-10-17
+  time spent: 0.5 hours
+
+     simple demo of HTML forms via Flask
+
+     trioTASK:
+     If any member of team has forms experience, let their know-how OSMOTE.
+     If no one does, seek external assistance.
+
+     PROTIP: Revisit code from intro if you have it.
+     Peruse this code together and discuss how it should work,
+       in conjunction with the back end apparatus.
+ -->
+
+
+<html>
+
+  <head>
+    <title> RESPONSE PAGE </title>
+  </head>
+
+  <body>
+
+    <h1>
+      DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
+    </h1>
+
+    <h2>
+      Greetings, Devo {{ username }}, welcome to the response page...
+      <br><br>
+      Request Method: {{ method }}
+    </h2>
+
+    <h3>
+      - A GET request retrieves information and user input from the webserver; uses request.args.
+      <br>
+      - A POST request places the HTML information retrieved from the user's input on the webserver; uses request.form.
+    </h3>
+
+    <br>
+  </body>
+
+</html>
