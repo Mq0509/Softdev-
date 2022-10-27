@@ -1,0 +1,13 @@
+DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
+SoftDev
+K18 -- (Python+SQLite)3: A Mare Widge Made in Heaven
+2022-10-25
+time spent: 2 hrs
+
+DISCO:
+* We learned that if we need to insert values into a table in python, we need to use a f string. Without a f string, sqlite couldn't recognize the values as texts.
+* We learned that when using the execute() function in the python file, we do not include semicolons for the sqlite commands. However, when we perform the sqlite commands in the terminal we need a semicolon at the end.
+* We learned that we have to first use the commit() function before executing fetchall().
+
+QCC:
+* Why do we have to include semicolons after sqlite commands in the terminal but not when using execute()?
