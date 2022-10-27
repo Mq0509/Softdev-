@@ -4,8 +4,8 @@
 #### 2022-10-24
 #### time spent: 1 hour
 
-* QCC
-* we accidently input a text instead of a number in a field we assigned as numbers. 
+#### QCC
+* We accidently input a text instead of a number in a field we assigned as numbers. 
 However, no error occured. We are confused to why there are no consequences of doing 
 so. Are the datatypes simply for organization purposes?
 
