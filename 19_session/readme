@@ -1,0 +1,27 @@
+DEM PUMPKINS: Emily Ortiz, Diana Akhmedova, May Qiu
+SoftDev
+K19 -- Sessions Greetings
+2022-11-03
+time spent: 3.5 hours
+
+DISCO:
+* Imports needed for sessions:
+    from flask import redirect
+    from flask import session
+    import os
+* Generates a random secret key:
+    app.secret_key = os.urandom(32)
+* Checks if the user is in a session:
+    if 'username' in session:
+* Removes the user from a session:
+        session.pop('username')
+* Redirects the user to "/page":
+    return redirect("/page")
+* Creates a session/cookie with the user-inputter username and password:
+    session['username'] = request.form['username'], request.form['password']
+* We can insert a link into buttons:
+    <a href="/logout" name="logout" value="Logout"><button>Logout</button></a>
+
+QCC:
+* We are having difficulties making the user variable Elmo. Thus, there is no username on the response page.
+* What does the secret_key do? Why does the webpage not work if we comment out the secret_key?
