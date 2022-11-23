@@ -1,0 +1,5 @@
+*Disco
+**The JSON looks like a dictionary, with key and values. When coding, we also learned that it can be treated like one.
+
+*Questions
+**What is the difference between using requests and urlib.request?
