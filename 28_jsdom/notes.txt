@@ -1,0 +1,12 @@
+Team Acronauts :: Anjini and May
+SoftDev pd07
+K28 -- Getting more comfortable with the dev console and the DOM
+2023-04-19
+
+DISCOS:
+ * when you type in the function name it'll give you info on the function 
+
+QCCS:
+ * How does it know what color to display if there's more than one color listed in class?
+ * What exactly does innerHtml do? We looked at the official documentation and we are still confused.
+ * We are having difficulty making the new appended text stay on the page after we refresh the page
