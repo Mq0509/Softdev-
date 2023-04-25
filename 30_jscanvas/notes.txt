@@ -1,0 +1,28 @@
+ <!-- Team Arconauts: May and Anjini 
+       SoftDev pd07
+       K30 -- canvas based JS drawing
+       2023-04-24m
+
+       HTML file for JavaScript canvas work
+    QCC
+    Why does only drawRect run in the code above, even when the console prints circ?
+    The first click never draws anything. 
+
+
+  -->
+
+    var draw = function(e) {
+        //var draw = (e) => {
+        console.log("AJAJ")
+        if(mode == "rect"){
+            console.log("rec")
+            c.addEventListener("click",drawRect);
+            drawRect;
+        }
+        else{
+            console.log("circ")
+            c.addEventListener("click",drawCircle);
+            drawCircle;
+        }
+    }
+
