@@ -62,13 +62,13 @@ var mode = "rect";
         console.log("AJAJ")
         if(mode == "rect"){
             console.log("rec")
-            c.addEventListener("click",drawCircle);
-            drawRect;
+            // c.addEventListener("click",drawCircle);
+            drawRect(e);
         }
         else{
             console.log("circ")
-            c.addEventListener("click",drawCircle);
-            drawCircle;
+            // c.addEventListener("click",drawCircle);
+            drawCircle(e);
         }
     }
     var wipeCanvas = function() {
