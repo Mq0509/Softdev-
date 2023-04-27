@@ -1,107 +1,59 @@
-var c = document.getElementById("playground") // GET CANVAS
-var dotButton = document.getElementById("buttonCircle")
-var stopButton = document.getElementById("buttonStop") //get stop button
+// Team Aggregate Dinosaurs :: Anjini Katari, Daniel Liu
+// SoftDev pd7
+// K31 JS Paint, Paint, Paint...
+// 2023-04-25
+// --------------------------------------------------
 
-var ctx = c.getContext("2d") // Your code
+var c = document.getElementById("playground"); //GET CANVAS
+var dotButton = document.getElementById("buttonCircle"); //GET DOT BUTTON
+var stopButton = document.getElementById("buttonStop"); //GET STOP BUTTON
 
-ctx.fillStyle = "red"
+var ctx = c.getContext("2d");
 
-var width = c.width
-var height = c.height
-
-var requestID;
+ctx.fillStyle = "green";
+var requestID; //init global var for use with animation frames
 
 var clear = (e) => {
-    ctx.clearRect(0,0,c.width,c.height)
+    ctx.clearRect(0,0,c.width,c.height);
 };
 
-var radius = 0;
+var radius = 100;
+var radius_inc = 1;
 var growing = true;
-var radius = 10;
-var stopAnimation = false;
-var isDrawing = false;
 
+var drawCircle = () => {
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.arc(c.width/2,c.height/2,radius,0,2 * Math.PI);
+    ctx.stroke()
+    ctx.fill()
+ }
 
-var drawCircle = function(e) {
+var drawDot = (e) => {
+    window.cancelAnimationFrame(requestID);
+    requestID = window.requestAnimationFrame(drawDot);
+    clear();
+    drawCircle();
     if (growing) {
-        if (radius + 1 > height/2){
-            radius = height/2
-            growing = false
-        } else if (radius === height/2) {
-            radius -= 1
-            growing = false
-        } else {
-            radius += 1
+        if (radius > c.width / 2) { //if too big
+            growing = false;
         }
-    } else {
-        if (radius - 1 < 10) {
-            radius = 10
-            growing = true;
-        } else if (radius === 10) {
-            growing = true;
-            radius += 1;
-        } else {
-            radius -= 1;
-        } 
+        radius += radius_inc;
+    } 
+    else {
+        radius -= radius_inc;
+        if (radius == 0) {  //other side when growing is set to false
+            growing = true
+        }
     }
-    
-    
-    //var mouseX = e.offsetX 
-    //var mouseY = e.offsetY
-    console.log("drawCircle")
-    ctx.beginPath() //places pen down
-    path = ctx.arc(width/2, height/2, radius, 0, 2 * Math.PI) //moves pen
-    ctx.stroke() //shows result
-    ctx.fill(path) //fills in the result
 };
 
-var dotListener = true;
-
-var drawDot = () => {
-    dotButton.removeEventListener("click", drawDot); // you cant click this again once you already clicked it
-    dotListener = false
-    
-    //console.log(requestID-Date.now())
-    //stopAnimation = false
-    //cancelAnimationFrame(drawDot)
-    clear()
-    drawCircle()
-    if (!stopAnimation) {
-        requestAnimationFrame(drawDot)
-    } else {
-        stopAnimation = false;
-        dotButton.addEventListener("click", drawDot);
-        dotListener = true
-        
-    }
-    
-    /*
-        Wipe the canvas
-        Repaint the circle,
-    */
-};
-
-//var stopIt = function ( ) ‹
 var stopIt = () => {
-    console.log("stopIt invoked..");
-    console.log ( requestID );
-    stopAnimation = true;    
-    stopButton.removeEventListener( "click", stopIt);
-    /*YOUR CODE HERE
-    •to stop the animation
-    You will need window. cancelAnimationFrame ()
-    */
+    console.log("stopIt invoked...");
+    console.log(requestID);
+    window.cancelAnimationFrame(requestID);
 };
 
-var change = () => {
-    if (dotListener) {
-        stopButton.removeEventListener( "click", stopIt); 
-    } else {
-        stopButton.addEventListener( "click", stopIt);
-        stopIt()
-    }
-};
+dotButton.addEventListener("click",drawDot);
 
-dotButton.addEventListener("click", drawDot);
-stopButton.addEventListener( "click", stopIt);
-stopButton.addEventListener( "click", change);
+stopButton.addEventListener("click",stopIt);

@@ -1,0 +1,8 @@
+Team Arconauts: May and Anjini 
+SoftDev pd07
+K32 -- JS Bounce
+2023-04-26w
+
+QCC
+We are having difficulty incorportating the velocity to make the logo move around the screen
+It currently just places the logo at a new coordinate, instead of traveling there.
