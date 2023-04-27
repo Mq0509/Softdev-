@@ -32,7 +32,7 @@ var drawDot = (e) => {
     else {
         radius -= radius_inc;
         if (radius == 0) {  //other side when growing is set to false
-            growing = true
+            growing = true;
         }
     }
 };
@@ -41,15 +41,15 @@ var dvdLogoSetup = function() {
     window.cancelAnimationFrame( requestID );
 
     //demensions of the image itself
-    var rectWidth = 40;
-    var rectHeight = 60;
+    var rectWidth = 60;
+    var rectHeight = 40;
 
     //
     var rectX = Math.random() * 100;
     var rectY = Math.random() * 100;
 
-    var xvel = 0;
-    var yvel = 0;
+    var xvel = 1;
+    var yvel = 1;
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
@@ -59,13 +59,15 @@ var dvdLogoSetup = function() {
         ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
         ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
         if(c.width - rectX < rectWidth){
-            xvel = -(xvel)
+            xvel = -(xvel);
         }
-        if(c.height - rectY < rectHeight){
-            yvel = -(yvel)
+        else if(c.height - rectY < rectHeight){
+            yvel = -(yvel);
         }
-        rectX = Math.random() * c.width;
-        rectY = Math.random() * c.height;
+        else{
+            rectX = rectX + xvel;
+            rectY = rectY + yvel;
+             }
         requestID = window.requestAnimationFrame(dvdLogo);
     };
     dvdLogo();
@@ -73,12 +75,9 @@ var dvdLogoSetup = function() {
 
 
 var clear = (e) => {
-    //e.preventDefault(); // Q: what dis? 
+    e.preventDefault(); // Q: what dis? 
     ctx.clearRect(0,0,c.width,c.height);
 };
-
-
-
 
 var stopIt = () => {
     console.log("stopIt invoked...");
